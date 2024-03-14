@@ -10,9 +10,9 @@ To get started with this project, follow these steps:
 
 Make sure you have the following installed on your local machine:
 
-- [PHP](https://www.php.net/) (>= 7.4)
+- [PHP](https://www.php.net/) (>= 8.1)
 - [Composer](https://getcomposer.org/)
-- [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/)
+- [MySQL](https://www.mysql.com/)
 
 ### Installation
 
