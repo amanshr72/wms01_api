@@ -56,14 +56,14 @@ class SaveAssignedDOController extends Controller
                     'Status' => "true", 
                     'Message' => $response['Message'], 
                 ]);
+                $message[] = 'Data saved successfully to the API from the database.';
             }else{
-                return $response;
-                $errMessage[] =  'Warning Message : ' . $response['Message'];;
+                $message[] =  'Warning Message : ' . $response['Message'];;
             } 
         }
 
-        return !empty($errMessage)
-        ? "<ul>" . implode('', array_map(fn($msg) => "<li>$msg</li>", $errMessage)) . "</ul>"
-        : 'Data posted successfully to the API from the database.';
+        return !empty($message)
+        ? "<ul>" . implode('', array_map(fn($msg) => "<li>$msg</li>", $message)) . "</ul>"
+        : 'Data saved successfully to the API from the database.';
     }
 }

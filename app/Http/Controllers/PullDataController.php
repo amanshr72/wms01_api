@@ -12,6 +12,7 @@ use App\Models\GetSaleOrder;
 use App\Models\GetStockInHand;
 use App\Models\GetStockTransferIn;
 use App\Models\GetStockTransferOut;
+use App\Models\PurchaseOrder;
 use Illuminate\Http\Request;
 
 class PullDataController extends Controller
@@ -32,7 +33,7 @@ class PullDataController extends Controller
     }
 
     public function viewSalePurchaseOrderData(){
-        $orders = GetPurchaseOrder::latest()->paginate(10);
+        $orders = PurchaseOrder::latest()->paginate(10);
         return view('pull.sale-purchase-voucher', compact('orders'));
     }
 
