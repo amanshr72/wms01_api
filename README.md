@@ -16,7 +16,7 @@ Make sure you have the following installed on your local machine:
 
 ### Installation
 
-1. git clone [repository_url]<https://github.com/amanshr72/wms01_api.git>
+1. git clone [repository_url](https://github.com/amanshr72/wms01_api.git)
 2. cd project-directory
 3. composer install
 4. cp .env.example .env
