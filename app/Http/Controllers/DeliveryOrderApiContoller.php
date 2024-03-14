@@ -17,7 +17,7 @@ class DeliveryOrderApiContoller extends Controller
         ];
         
         $endpoint = 'http://demo.logicerp.com/api/GetDeliveryOrder';
-        $username = 'LAdmin'; $password = '1';
+        $username = 'LAdmin'; $password = '1'; 
         $credentials = base64_encode("$username:$password");
 
         $response = Http::withHeaders([
