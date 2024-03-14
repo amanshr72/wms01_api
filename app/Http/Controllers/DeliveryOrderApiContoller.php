@@ -31,10 +31,16 @@ class DeliveryOrderApiContoller extends Controller
                 $deliverOrder = GetDeliveryOrder::create($item);
                 
                 foreach($item['LstItems'] as $listItem){
-                    $listItem['delivery_order_id'] = $deliverOrder->id;
-                    $listItem['SO_No'] = $deliverOrder->SO_No;
-                    $listItem['SO_Date'] = $deliverOrder->SO_Date;
-                    $listItem['Status'] = true; $listItem['Message'] = $response['Message']; $listItem['LastGlobalModifyCode'] = $response['LastGlobalModifyCode'];
+                    $listItem = array_merge($listItem, [
+                        'delivery_order_id' => $deliverOrder->id,
+                        'SO_No' => $deliverOrder->SO_No,
+                        'SO_Date' => $deliverOrder->SO_Date,
+                        'Status' => true,
+                        'Message' => $response['Message'],
+                        'LastGlobalModifyCode' => $response['LastGlobalModifyCode']
+                    ]);
+
+                    return $listItem;
                     GetDeliveryOrderlistItem::create($listItem);
                 }
             }

@@ -44,7 +44,6 @@ Route::get('get-sale-invoice', [SaleInvoiceApiController::class, 'fetchDataFromA
 Route::get('get-purchase-voucher', [PurchaseVoucherApiContoller::class, 'fetchDataFromApi']);
 
 /* // not tested routes - Getdata = null
-Route::get('purchase-order', [PurchaseOrderApiContoller::class, 'fetchDataFromApi']);
 Route::get('pu-challan-return', [PuChallanReturnApiContoller::class, 'fetchDataFromApi']);
 */
 
@@ -73,4 +72,8 @@ Route::get('save-sale-order', [SaleOrderApiController::class, 'fetchDataAndPostT
 
 /* Save Assigned DO */
 Route::get('save-assigned-do', [SaveAssignedDOController::class, 'fetchDataAndPostToApi'])->name('push.SaveAssignedDO');
+
+/* PurchaseOrder */
+Route::get('get-purchase-order', [PurchaseOrderApiContoller::class, 'getDataFromApi']);
+Route::get('save-purchase-order', [PurchaseOrderApiContoller::class, 'fetchDataAndPostToApi'])->name('push.SavePurchaseOrder');
 

@@ -35,6 +35,9 @@
             <li>
                 <x-nav-link :href="route('push.SaveAssignedDO')">Save Assigned DO</x-nav-link>
             </li>
+            <li>
+                <x-nav-link :href="route('push.SavePurchaseOrder')">Save Purchase Order</x-nav-link>
+            </li>
         </ul>
     </div>
 </aside>
