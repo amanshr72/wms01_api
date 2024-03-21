@@ -13,6 +13,7 @@ class PackingSlipAgainstSoController extends Controller
         $packingSlips = PackingSlip::select(
             'id', 'branch_code', 'party_order_no', 'ps_prefix', 'godown_name', 'remarks', 'box_no_prefix',
         )->where('Status', null)->get();
+        $errmsg = [];
         
         $endpoint = "http://demo.logicerp.com/api/PackingSlipAgainstSO";
         $username = 'LAdmin';
@@ -44,11 +45,10 @@ class PackingSlipAgainstSoController extends Controller
                     'Authorization' => 'Basic ' . $credentials,
                 ])->post($endpoint, $jsonRequest);
                 
-                $errMsg[] =  ($response['Status'] !== false) ? 'Data posted successfully to the API from the database.' : $response['Message'];
+                $errMsg[] = ($response['Status'] !== false) ? 'Data posted successfully to the API from the database.' : $response['Message'];
             }
-            return $errMsg;
         }
 
-        return 'No Packaging Slip Left to Push';
+        return (isset($errMsg)) ? $errMsg : 'No Packaging Slip Left to Push';
     }
 }
